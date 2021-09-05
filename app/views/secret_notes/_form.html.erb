@@ -1,0 +1,27 @@
+<%= form_with(model: secret_note, local: true) do |form| %>
+  <% if secret_note.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(secret_note.errors.count, "error") %> prohibited this secret_note from being saved:</h2>
+
+      <ul>
+        <% secret_note.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :title %>
+    <%= form.text_field :title %>
+  </div>
+
+  <div class="field">
+    <%= form.label :note %>
+    <%= form.text_field :note, value: hcd(secret_note.note).try(:strip) %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

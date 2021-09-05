@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @secret_note.title %>
+</p>
+
+<p>
+  <strong>Encrpyted note</strong>
+  <%= @secret_note.note %>
+</p>
+
+<p>
+  <strong>Note:</strong>
+  <%= hcd(@secret_note.note) %>
+</p>
+
+<%= link_to 'Edit', edit_secret_note_path(@secret_note) %> |
+<%= link_to 'Back', secret_notes_path %>

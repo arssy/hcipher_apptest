@@ -1,0 +1,1 @@
+HCIPHER_KEY = Rails.application.credentials[Rails.env.to_sym][:hcipher_key].freeze
